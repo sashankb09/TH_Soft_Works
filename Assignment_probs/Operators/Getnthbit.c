@@ -4,7 +4,7 @@ int get_nth_bit(int num, int n) {
     return (num >> n) & 1;
 }
 
-int main() {
+int main() { 
     int num, n;
 
     printf("Enter a number: ");

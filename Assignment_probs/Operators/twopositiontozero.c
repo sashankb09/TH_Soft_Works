@@ -6,6 +6,7 @@ void countZerosOnes(int num) {
     while (num != 0) {
         if (num & 1)
             ones++;
+            // num >>= 1;
         else
             zeros++;
         num >>= 1; // Right shift to check the next bit
