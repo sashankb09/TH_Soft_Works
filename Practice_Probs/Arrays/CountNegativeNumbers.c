@@ -16,7 +16,7 @@ int main(){
  
    int negativee= negative(array,size);
 
-    printf("Sum of even array elements: %d\n", negativee);
+    printf("total negative numbers in array[%d] is : %d\n",size , negativee);
     
     return 0;
 }

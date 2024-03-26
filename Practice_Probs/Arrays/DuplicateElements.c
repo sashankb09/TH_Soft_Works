@@ -4,15 +4,19 @@ void count(int arr[], int size) {
     int duplicates = 0; 
     for (int i = 0; i < size; i++) {
         int count = 0;
-        for (int j = 0; j < size; j++) {
+        for (int j = i+1; j < size; j++) {
             if (arr[i] == arr[j]) {
                 count++;
+                break;
             }
+            
         }
-        if (count > 1) {
+        
+        if (count > 0) {
             duplicates++;
         }
     }
+    
     
     printf("Total number of duplicate elements: %d\n", duplicates);
 }
