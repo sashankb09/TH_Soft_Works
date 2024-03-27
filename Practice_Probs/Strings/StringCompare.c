@@ -1,29 +1,37 @@
 #include <stdio.h>
+#include <string.h>
 
-void Strcomp(char str[], char str2[]) {
-    int i;
-    for (i = 0; str[i] != '\0' && str2[i] != '\0'; i++) {
-       if(str[i] != str2[i]) {
-           printf("The strings are not equal\n");
-           break;
-       }
+int stringCompare(const char *str1, const char *str2) {
+    while (*str1 != '\0' && *str1 != '\n' && *str2 != '\0' && *str2 != '\n' && *str1 == *str2) {
+        str1++;
+        str2++;
     }
-    if (str[i] == '\0' && str2[i] == '\0') {
-        printf("The strings are equal\n");
-    } else {
-        printf("The strings are not equal\n");
-    }
+    return *str1 - *str2;
 }
 
 int main() {
-    char st[] = "Hello";
-    char st2[]="Hello";  
-    
-     Strcomp(st, st2);
+    char str1[100], str2[100];
 
-    // for (int i = 0; i < size; i++) {
-    //     printf("%c", st2[i]);
-    // }
-    
-    // printf("\n");
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+    if (str1[strlen(str1) - 1] == '\n') {
+        str1[strlen(str1) - 1] = '\0';
+    }
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+    if (str2[strlen(str2) - 1] == '\n') {
+        str2[strlen(str2) - 1] = '\0';
+    }
+
+    int (*ptr)(const char *, const char *);
+    ptr = &stringCompare;
+
+    int result = ptr(str1, str2);
+
+    if (result != 0) {
+        printf("The strings are not equal.\n");
+    }
+
+    return 0;
 }

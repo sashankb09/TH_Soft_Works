@@ -18,13 +18,10 @@ void countCharacters( char *str, int *alph, int *digits, int *spec) {
 }
 
 int main() {
-    char str[]="hello,boy,9";
+    char str[30];
+    printf("Enter second string: ");
+    fgets(str, sizeof(str), stdin);
     int alphabets, digits, special;
-
-    // printf("Enter a string: ");
-    // scanf("%[^\n]", str);
-    
-
     countCharacters(str, &alphabets, &digits, &special);
 
     printf("Number of alphabets: %d\n", alphabets);

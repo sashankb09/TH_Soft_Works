@@ -1,23 +1,28 @@
 #include <stdio.h>
 
-void Strcopy(char str[], int size, char str2[]) {
-    for (int i = 0; i < size; i++) {
-        str2[i] = str[i];
+void stringCopy(const char *source, char *destination) {
+    while (*source != '\0') {
+        *destination = *source;
+        source++;
+        destination++;
     }
+    *destination = '\0';
 }
 
 int main() {
-    char st[] = "Hello, world";
-    int size = 12;  // The size should be 12, as 'H' to 'd' are 12 characters
-    char st2[13];   // Initialize with proper size
+    char str[100];
+    char str1[100];
     
-    Strcopy(st, size, st2);
+    printf("Enter a string: ");
+    scanf("%s", str);
 
-    for (int i = 0; i < size; i++) {
-        printf("%c", st2[i]);
-    }
-    
-    printf("\n");
+    void (*ptr)(const char *, char *);
+    ptr = &stringCopy;
+
+    ptr(str, str1);
+
+    printf("Original string: %s\n", str);
+    printf("Copied string  : %s\n", str1);
 
     return 0;
 }
