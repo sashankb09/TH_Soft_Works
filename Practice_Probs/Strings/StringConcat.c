@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void concatStrings(const char str1[], const char str2[], char result[]) {
+void concatStrings( char str1[], char str2[], char result[]) {
     int i = 0, j = 0;
 
     while (str1[i] != '\0') {

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void stringCopy(const char *source, char *destination) {
+void stringCopy( char *source, char *destination) {
     while (*source != '\0') {
         *destination = *source;
         source++;

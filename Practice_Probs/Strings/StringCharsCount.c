@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void countCharacters( char *str, int *alph, int *digits, int *spec) {
+void countCharacters(char *str, int *alph, int *digits, int *spec) {
     *alph = *digits = *spec = 0;
     int i = 0;
     while (str[i] != '\0') {
@@ -10,7 +10,7 @@ void countCharacters( char *str, int *alph, int *digits, int *spec) {
         else if (str[i] >= '0' && str[i] <= '9') {
             (*digits)++;
         }
-        else {
+        else if (str[i] != '\n' && str[i] != '\0' && str[i] != ' ') {
             (*spec)++;
         }
         i++;
@@ -19,7 +19,7 @@ void countCharacters( char *str, int *alph, int *digits, int *spec) {
 
 int main() {
     char str[30];
-    printf("Enter second string: ");
+    printf("Enter a string: ");
     fgets(str, sizeof(str), stdin);
     int alphabets, digits, special;
     countCharacters(str, &alphabets, &digits, &special);
