@@ -4,14 +4,16 @@ int main() {
     int i, j, k, n;
     printf("Enter the number of lines: ");
     scanf("%d", &n);
-
+int nsp=0,nst=1;
     // Increasing pattern
-    for(i = 1; i <= n; i++) {
-        for(j = 1; j <= i; j++) {
+    for(i = 1; i <= nsp; i++) {
+        for(j = 1; j <= nst; j++) {
             printf("%d", i);
         }
         printf("\n");
     }
+    nst=nst+2;
+    nsp
 
     // Decreasing pattern
     int nsp = n - 1;

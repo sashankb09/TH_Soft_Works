@@ -9,12 +9,13 @@ void firstOccurrence(char *str, char *ele) {
             printf("%d\n", i);
             break;
         }
-    }
-    if (count > 0) {
-        printf("The element is found.\n");
+        if (count > 0) {
+        printf("The element is found.\n",str[i]);
     } else {
         printf("Not found.\n");
     }
+    }
+    
 }
 
 int main() {
